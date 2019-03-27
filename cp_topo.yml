@@ -1,0 +1,14 @@
+---
+- hosts: leaf:spine
+  become: yes
+  tasks:
+  - name: copy topology.dot file to /etc/ptm.d
+    copy:
+      src: ~/topology.dot
+      dest: /etc/ptm.d
+      force: yes
+  - name: restart ptmd service
+    service:
+      name: ptmd
+      state: restarted
+      
