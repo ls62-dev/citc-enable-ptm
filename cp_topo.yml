@@ -40,9 +40,9 @@
   tasks:
   - name: "Install LLDP and SNMP"
     apt: name={{ item }} state=present
-     with_items:
-       - lldp
-       - snmp
+    with_items:
+      - lldp
+      - snmp
 
   - name: "Start and enable the LLDP and SNMP services"
     service: name={{ item }} state=started enabled=yes
