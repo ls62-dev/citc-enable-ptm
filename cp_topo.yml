@@ -3,18 +3,18 @@
   become: yes
   tasks:
   - name: bring up Spine01/02 interfaces
-     nclu:
-       commands:
-           - add interface swp1-4
-       commit: true
+    nclu:
+     commands:
+         - add interface swp1-4
+     commit: true
 - hosts: leaf
   become: yes
   tasks:
   - name: bring up Leaf01-04 interfaces
-     nclu:
-       commands:
-           - add interface swp1-2,swp48-52
-       commit: true
+    nclu:
+     commands:
+       - add interface swp1-2,swp48-52
+     commit: true
 
 - hosts: leaf:spine
   become: yes
