@@ -21,7 +21,7 @@
   tasks:
   - name: copy topology.dot file to /etc/ptm.d on all switches
     copy:
-      src: ~/topology.dot
+      src: ./topology.dot
       dest: /etc/ptm.d
       force: yes
   - name: restart ptmd service
