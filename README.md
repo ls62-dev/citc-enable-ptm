@@ -1,2 +1,2 @@
-# cl-enable-ptm
-Ansible playbook to copy topology.dot to network devices and restart ptmd on CL switches
+# citc-enable-ptm
+Enables PTM in CiTC from blank slate
