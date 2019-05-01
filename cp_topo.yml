@@ -1,8 +1,27 @@
 ---
+- hosts: spine
+  tasks:
+   - name: bring up Spine01/02 interfaces
+     nclu:
+       commands:
+
+           - add interface swp1-4
+           
+       commit: true
+
+- hosts: leaf
+    - name: bring up Leaf01-04 interfaces
+     nclu:
+       commands:
+
+           - add interface swp1-2,swp48-52
+           
+       commit: true
+       
 - hosts: leaf:spine
   become: yes
   tasks:
-  - name: copy topology.dot file to /etc/ptm.d
+  - name: copy topology.dot file to /etc/ptm.d on all switches
     copy:
       src: ~/topology.dot
       dest: /etc/ptm.d
