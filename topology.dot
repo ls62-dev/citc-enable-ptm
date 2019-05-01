@@ -22,10 +22,10 @@ graph vx {
  "leaf03":"swp52" -- "spine02":"swp3"
  "leaf04":"swp52" -- "spine02":"swp4"
 
- "leaf01":"swp48" -- "leaf02":"swp48"
  "leaf01":"swp49" -- "leaf02":"swp49"
- "leaf03":"swp48" -- "leaf04":"swp48"
+ "leaf01":"swp50" -- "leaf02":"swp50"
  "leaf03":"swp49" -- "leaf04":"swp49"
+ "leaf03":"swp50" -- "leaf04":"swp50"
 
  "server01":"eth1" -- "leaf01":"swp1" [left_mac="00:03:00:11:11:01"]
  "server01":"eth2" -- "leaf02":"swp1" [left_mac="00:03:00:11:11:02"]
