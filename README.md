@@ -1,6 +1,6 @@
 # citc-enable-ptm
 Enables PTM in CiTC from blank slate
 
-This will also help validate that PTM 
+This command will valid PTM in the fabric, run it after the playbook.
 
 `ansible leaf:spine -a ptmctl`
