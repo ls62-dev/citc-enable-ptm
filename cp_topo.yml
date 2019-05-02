@@ -34,19 +34,32 @@
       state: restarted
 
 - hosts: host
-  remote_user: cumulus
   become: yes
-  become_method: sudo
+  gather_facts: no
   tasks:
   - name: "Install LLDP and SNMP"
     apt: name={{ item }} state=present
+    update_cache: yes
     with_items:
-      - lldp
-      - snmp
+       - lldpd
+       - snmp
+       - snmpd
 
   - name: "Start and enable the LLDP and SNMP services"
     service: name={{ item }} state=started enabled=yes
     with_items:
-       - lldp
-       - snmp
-    
+       - lldpd
+       - snmpd
+
+  - name: "modify /e/n/i to add eth1 and eth2"
+    blockinfile:
+      dest: /etc/network/interfaces
+      block: |
+        auto eth1
+        iface eth1 inet dhcp
+        auto eth2
+        iface eth2 inet dhcp
+      backup: yes    
+
+  - name: "bring up eth1 and eth2"
+    shell: ip link set dev eth1 up && ip link set dev eth2 up
