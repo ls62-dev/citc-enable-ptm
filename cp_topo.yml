@@ -39,7 +39,6 @@
   tasks:
   - name: "Install LLDP and SNMP"
     apt: name={{ item }} state=present
-    update_cache: yes
     with_items:
        - lldpd
        - snmp
