@@ -4,6 +4,8 @@ Enables PTM in CiTC from blank slate
 
 Psuedo code for this playbook:
 
+* bring up all spine interfaces
+* bring up all leaf interfaces
 * copy the topology.dot file to all leaf and spine switches
 * restart the ptmd service to instantiate PTM on all leaf and spine
 * install LLDP and SNMP on all the servers
